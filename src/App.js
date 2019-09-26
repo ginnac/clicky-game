@@ -1,6 +1,6 @@
 import React from 'react';
 //import './App.css';
-import Cards from './components/bodyParts/Cards.js';
+import CardsUpdate from './components/CardsUpdate';
 import Navbar  from './components/bodyParts/Navbar.js';
 import Jumbotron  from './components/bodyParts/Jumbotron.js';
 import Footer  from './components/bodyParts/Footer.js';
@@ -10,7 +10,7 @@ function App() {
     <div >
     <Navbar/>
     <Jumbotron/>
-     <Cards/>
+     <CardsUpdate/>
      <Footer/>
     </div>
   );
