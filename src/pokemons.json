@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "name": "pickachu",
+      "image": "https://vignette.wikia.nocookie.net/wii/images/8/89/Pikachu.jpg/revision/latest?cb=20140209205851",
+     "clicked": false
+    },
+    {
+      "id": 2,
+      "name": "charmander",
+      "image": "https://tse1.mm.bing.net/th?id=OIP.eZAwutSa1crJgnW3-SRAqwHaHa&pid=Api&H=160&W=160&P=0",
+      "clicked": false
+    },
+    {
+      "id": 3,
+      "name": "squirtle",
+      "image": "https://pokethrift.com/wp-content/uploads/2016/08/squirtle_with_a_default_happy_face_by_kol98-d9ia5zu.png",
+      "clicked": false
+    },
+    {
+      "id": 4,
+      "name": "bulbasor",
+      "image": "http://th07.deviantart.net/fs70/PRE/i/2013/082/2/6/001_bulbasaur_by_pklucario-d5z1g10.png",
+      "clicked": false
+    },
+    {
+      "id": 5,
+      "name": "ditto",
+      "image": "http://img1.wikia.nocookie.net/__cb20130702133542/sonicpokemon/images/thumb/7/79/Ditto_AG_anime.png/500px-Ditto_AG_anime.png",
+      "clicked": false
+    },
+    {
+      "id": 6,
+      "name": "meow",
+      "image": "https://vignette2.wikia.nocookie.net/pokemon/images/b/b5/052Meowth_AG_anime_3.png/revision/latest?cb=20150101230304",
+      "clicked": false
+    },
+    {
+      "id": 7,
+      "name": "chikorita",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.8HE1rRKubvM0SRuaVXnAWwHaG2&pid=Api&P=0&w=169&h=157",
+      "clicked": false
+    },
+    {
+      "id": 8,
+      "name": "onix",
+      "image": "https://img.pokemondb.net/artwork/large/onix.jpg",
+      "clicked": false
+    },
+    {
+      "id": 9,
+      "name": "psyduck",
+      "image": "https://tse4.mm.bing.net/th?id=OIP.c8FOtPxVlmJCsWgzdgg6sgHaIF&pid=Api&P=0&w=300&h=300",
+      "clicked": false
+    },
+    {
+      "id": 10,
+      "name": "butterfly",
+      "image": "https://pm1.narvii.com/5985/e5cd5bbd7f405ca55f9294c1a98f15ca1dd0feb0_hq.jpg",
+      "clicked": false
+    },
+    {
+      "id": 11,
+      "name": "seel",
+      "image": "http://guidesarchive.ign.com/guides/9846/images/seel.gif",
+      "clicked": false
+    },
+    {
+      "id": 12,
+      "name": "giglypuff",
+      "image": "https://tse2.mm.bing.net/th?id=OIP.6yit7TYITVRCoE8TsqRHNAHaHa&pid=Api&P=0&w=300&h=300",
+      "clicked": false
+    }
+  ]
+  
