@@ -1,9 +1,9 @@
-# Clicky Game
+### Clicky Game
 
-* # [Live DEMO](https://ginnac.github.io/clicky-game/) 
+[Live DEMO](https://ginnac.github.io/clicky-game/) 
 
 
-## UTAH Coding Bootcamp React Project
+UTAH Coding Bootcamp React Project
 
 ---
 
