@@ -1,29 +1,27 @@
 import React, { Component } from "react";
 import pokemons from "../pokemons.json";
 import Cards from './bodyParts/Cards.js';
-//import Navbar from './bodyParts/Navbar.js';
+import Navbar from './bodyParts/Navbar.js';
+import Jumbotron from './bodyParts/Jumbotron.js';
 import Wrapper from "./Wrapper"
 
 class CardsUpdate extends Component {
     // Setting this.state.friends to the friends json array
     state = {
-      pokemonsList:pokemons
+      pokemonsList: pokemons,
+      message: "Click an image to begin!",
+      score: 0,
+      topScore: 0
     };
   
-    
+    //shuffle method to shuffle update values:
     shuffle = pokemonsList => {
-      
-       // let newPokemons = [].concat(pokemonsList); // create new array
-      // let indexesList = [];
 
       let newPokemons = [].concat(pokemonsList); // create new array
     
         for (let i = newPokemons.length - 1; i > 0; i--) {
-    
             const j = Math.floor(Math.random() * (i + 1));
-    
             [newPokemons[i], newPokemons[j]] = [newPokemons[j], newPokemons[i]];
-        
         }
     
         return this.setState({ pokemonsList: newPokemons });;
@@ -42,11 +40,10 @@ class CardsUpdate extends Component {
             if(pokemon.clicked && pokemon.id ===id){
                 //testing it detects this conditional 
                 console.log("oops you lost!");
-                //randomize
-
-              
-               // pokemonsList.sort(function(a, b){return 0.5 - Math.random()});
-                //game over and update the navbar to see if the topest winner has been beaten
+                
+                //game over so and update the clicked properties to false
+                //and then if the points are the highest update 
+                this.setState({ score: 0, message: "Opps, wrong guess" });
                
             } 
                 
@@ -58,10 +55,11 @@ class CardsUpdate extends Component {
               //testing it detects this conditional correctly 
               console.log(this.state);
               console.log("1 point more"); 
-              
-              //randomize
-              //pokemonsList.sort(function(a, b){return 0.5 - Math.random()});
-              //update the navbar to give 1 point
+ 
+              //update the navbar to give 1 point, and message to be set...
+              this.setState({ score: this.state.score + 1, message: "Great, you scored!" });
+
+              //change text color for a few seconds (maybe an animation function with set time out)
               
             } 
 
@@ -74,12 +72,10 @@ class CardsUpdate extends Component {
 
           });
 
-          console.log("hola!!!")
-
-          
 
           this.setState({ pokemonsList: pokemonsUpdated });
 
+          //randomize
           this.shuffle(pokemonsList);
 
           
@@ -89,9 +85,15 @@ class CardsUpdate extends Component {
     //display each poken in pokemons.json array
     render() {
       return (
-
-
+        <div>
+        <Navbar
+        message={this.state.message}
+        score={this.state.score}
+        topScore={this.state.topScore}
+        />
+        <Jumbotron/> 
         <Wrapper>
+            
           {this.state.pokemonsList.map(pokemon => (
             <Cards
               cardStatus={this.cardStatus}
@@ -103,6 +105,7 @@ class CardsUpdate extends Component {
              />
           ))}
         </Wrapper>
+        </div>
       );
     }
   }
