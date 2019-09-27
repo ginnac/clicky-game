@@ -9,11 +9,7 @@ function Cards(props) {
 const style={
     
 
-    divStyle:{
-
-    backgroundImage: `url(${props.image})` 
-    }
-   
+    divStyle:{backgroundImage: `url(${props.image})`}   
 }
 
 
@@ -21,9 +17,13 @@ const style={
   return (
 
 
-        <div role="img" aria-label="click item" className="click-item shake" 
+        <div onClick={() => props.cardStatus(props.id)}
+        role="img" aria-label="click item" className="click-item shake" 
             style={style.divStyle}>
+                <div>show:{props.clicked}
         </div>
+        </div>
+        
 
 
        
