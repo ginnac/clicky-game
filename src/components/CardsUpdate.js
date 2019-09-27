@@ -10,54 +10,80 @@ class CardsUpdate extends Component {
       pokemonsList:pokemons
     };
   
-
     
-    //if clicked === true, set game over...
-    // change navbar values, and randomize
+    shuffle = pokemonsList => {
+      
+       // let newPokemons = [].concat(pokemonsList); // create new array
+      // let indexesList = [];
 
-    //if clicked === false then add a point and randomize
+      let newPokemons = [].concat(pokemonsList); // create new array
+    
+        for (let i = newPokemons.length - 1; i > 0; i--) {
+    
+            const j = Math.floor(Math.random() * (i + 1));
+    
+            [newPokemons[i], newPokemons[j]] = [newPokemons[j], newPokemons[i]];
+        
+        }
+    
+        return this.setState({ pokemonsList: newPokemons });;
+
+    };
+    
+    
     
     
     
     cardStatus = id => {
+        const pokemonsList = this.state.pokemonsList;
         //method to map pokemon array; and changed cliked status
-        const pokemonsUpdated = this.state.pokemonsList.map(pokemon => {
+        const pokemonsUpdated = pokemonsList.map(pokemon => {
         
             if(pokemon.clicked && pokemon.id ===id){
-                //randomize
-                //game over and update the navbar to see if the topest winner has been beaten
+                //testing it detects this conditional 
                 console.log("oops you lost!");
+                //randomize
+
+              
+               // pokemonsList.sort(function(a, b){return 0.5 - Math.random()});
+                //game over and update the navbar to see if the topest winner has been beaten
+               
             } 
                 
 
 
             else if (pokemon.id === id) {
-              pokemon.clicked = true;
-              //randomize
-              //update the navbar to give 1 point
+              //chnaging state to true
+              pokemon.clicked = true;  
+              //testing it detects this conditional correctly 
               console.log(this.state);
-              console.log("1 point more");
+              console.log("1 point more"); 
+              
+              //randomize
+              //pokemonsList.sort(function(a, b){return 0.5 - Math.random()});
+              //update the navbar to give 1 point
+              
             } 
 
+
+
+            //another if condition to see if the person won by doing it correctly on all cards...
            
             return pokemon;
+            
+
           });
+
+          console.log("hola!!!")
+
+          
 
           this.setState({ pokemonsList: pokemonsUpdated });
 
+          this.shuffle(pokemonsList);
 
+          
 
-        // cliked values and non cliked values
-    
-        //if clicked === true, set game over...
-        // change navbar values, and randomize
-
-        //if clicked === false then add a point and randomize
-
-    //   //Filter this.state.friends for friends with an id not equal to the id being removed
-    //   const friends = this.state.friends.filter(friend => friend.id !== id);
-    //   //Set this.state.friends equal to the new friends array
-    //   this.setState({ friends });
     };
   
     //display each poken in pokemons.json array
