@@ -11,7 +11,8 @@ class CardsUpdate extends Component {
       pokemonsList: pokemons,
       message: "Click an image to begin!",
       score: 0,
-      topScore: 0
+      topScore: 0,
+      color: "white"
     };
 
 
@@ -22,13 +23,14 @@ class CardsUpdate extends Component {
     //shuffle method to shuffle update values:
     shuffle = pokemonsList => {
 
+
       let newPokemons = [].concat(pokemonsList); // create new array
     
         for (let i = newPokemons.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [newPokemons[i], newPokemons[j]] = [newPokemons[j], newPokemons[i]];
         }
-    
+        
         return this.setState({ pokemonsList: newPokemons });;
 
     };
@@ -36,11 +38,12 @@ class CardsUpdate extends Component {
     
     
     
-    
     cardStatus = id => {
+
         const pokemonsList = this.state.pokemonsList;
-        //method to map pokemon array; and changed cliked status
+            //method to map pokemon array; and changed cliked status
         const pokemonsUpdated = pokemonsList.map(pokemon => {
+
         
             if(pokemon.clicked && pokemon.id ===id){
                 //testing it detects this conditional 
@@ -48,7 +51,7 @@ class CardsUpdate extends Component {
                 
                 //game is over so and update the clicked properties to false
                 //and then if the points are the highest update 
-                this.setState({ score: 0, message: "Opps, wrong guess"});
+                this.setState({ score: 0, message: "Opps, wrong guess",color:"red"});
 
                 if(this.state.topScore < this.state.score){
                     this.setState({topScore: this.state.score});
@@ -65,23 +68,32 @@ class CardsUpdate extends Component {
 
 
             else if (pokemon.id === id) {
-              //chnaging state to true
-              pokemon.clicked = true;  
-              //testing it detects this conditional correctly 
-              console.log(this.state);
-              console.log("1 point more"); 
+
+                //if the last score was 11 and did a right guess...
+                if (this.state.score === 11){
+                    for (let i = 0; i<pokemonsList.length; i++){
+                    pokemonsList[i].clicked = false;
+                    }
+                    this.setState({ score: 0, topScore:0, message: "You won, play again!", color:"orange"});
+
+                }
+                else{
+                //chnaging state to true
+                pokemon.clicked = true;  
+                //testing it detects this conditional correctly 
+                console.log(this.state);
+                console.log("1 point more"); 
  
-              //update the navbar to give 1 point, and message to be set...
-              this.setState({ score: this.state.score + 1, message: "Great, you scored!" });
-
-              //change text color for a few seconds (maybe an animation function with set time out)
-              
-            } 
-
-
-
-            //another if condition to see if the person won by doing it correctly on all cards...
+                //update the navbar to give 1 point, and message to be set...
+                this.setState({ score: this.state.score + 1, message: "Great, you scored!", color:"yellow" });
+                //condition to see if the person won by doing it correctly on all cards...
+                
            
+              
+                }
+         
+            }
+
             return pokemon;
             
 
@@ -105,6 +117,7 @@ class CardsUpdate extends Component {
         message={this.state.message}
         score={this.state.score}
         topScore={this.state.topScore}
+        color={this.state.color}
         />
         <Jumbotron/> 
         <Wrapper>
