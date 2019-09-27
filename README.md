@@ -1,4 +1,4 @@
-### Clicky Game
+# Clicky Game
 
 [Live DEMO](https://ginnac.github.io/clicky-game/) 
 
@@ -21,7 +21,7 @@ Technologies:
 
 
 - - -
-## Developer
+### Developer
 
   * [Ginna Campbell](https://github.com/ginnac)
 
