@@ -13,6 +13,11 @@ class CardsUpdate extends Component {
       score: 0,
       topScore: 0
     };
+
+
+    componentDidMount(){
+        this.shuffle(this.state.pokemonsList);
+      }
   
     //shuffle method to shuffle update values:
     shuffle = pokemonsList => {
@@ -41,7 +46,7 @@ class CardsUpdate extends Component {
                 //testing it detects this conditional 
                 console.log("oops you lost!");
                 
-                //game over so and update the clicked properties to false
+                //game is over so and update the clicked properties to false
                 //and then if the points are the highest update 
                 this.setState({ score: 0, message: "Opps, wrong guess"});
 

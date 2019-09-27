@@ -20,8 +20,6 @@ const style={
         <div onClick={() => props.cardStatus(props.id)}
         role="img" aria-label="click item" className="click-item shake" 
             style={style.divStyle}>
-                <div>show:{props.clicked}
-        </div>
         </div>
         
 
