@@ -49,3 +49,17 @@ li{
     width:33%;
     text-align: center;
 }
+
+
+@media only screen and (max-width: 450px) {
+    .score{
+        width:80%;
+       
+      
+    }
+
+ .title, .center{
+    visibility: hidden;
+    width:5%
+    }
+  }

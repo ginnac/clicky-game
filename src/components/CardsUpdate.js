@@ -12,7 +12,8 @@ class CardsUpdate extends Component {
       message: "Click an image to begin!",
       score: 0,
       topScore: 0,
-      color: "white"
+      color: "white",
+      shadow: "2px 2px 4px #000000"
     };
 
 
@@ -51,7 +52,12 @@ class CardsUpdate extends Component {
                 
                 //game is over so and update the clicked properties to false
                 //and then if the points are the highest update 
-                this.setState({ score: 0, message: "Opps, wrong guess",color:"red"});
+                this.setState({ score: 0, message: "Opps, wrong guess",color:"#5133a4"});
+                 //setting message style color back to white after 1/2 a second
+                setTimeout(() => {
+                    this.setState({color:"red",});
+                  }, 300);
+
 
                 if(this.state.topScore < this.state.score){
                     this.setState({topScore: this.state.score});
@@ -74,7 +80,11 @@ class CardsUpdate extends Component {
                     for (let i = 0; i<pokemonsList.length; i++){
                     pokemonsList[i].clicked = false;
                     }
-                    this.setState({ score: 0, topScore:0, message: "You won, play again!", color:"orange"});
+                    this.setState({ score: 0, topScore:0, message: "You won, play again!", color:"#5133a4"});
+                   //setting message style color back to white after 1/2 a second
+                    setTimeout(() => {
+                        this.setState({color:"orange"});
+                      }, 300);
 
                 }
                 else{
@@ -85,9 +95,12 @@ class CardsUpdate extends Component {
                 console.log("1 point more"); 
  
                 //update the navbar to give 1 point, and message to be set...
-                this.setState({ score: this.state.score + 1, message: "Great, you scored!", color:"yellow" });
-                //condition to see if the person won by doing it correctly on all cards...
+                this.setState({ score: this.state.score + 1, message: "Great, you scored!", color:"#5133a4" });
                 
+                 //setting message style color back to white after 1/2 a second
+                setTimeout(() => {
+                    this.setState({color:"yellow"});
+                  }, 300);
            
               
                 }
@@ -118,6 +131,7 @@ class CardsUpdate extends Component {
         score={this.state.score}
         topScore={this.state.topScore}
         color={this.state.color}
+        shadow = {this.state.shadow}
         />
         <Jumbotron/> 
         <Wrapper>
