@@ -45,10 +45,16 @@ class CardsUpdate extends Component {
                 //and then if the points are the highest update 
                 this.setState({ score: 0, message: "Opps, wrong guess"});
 
+                if(this.state.topScore < this.state.score){
+                    this.setState({topScore: this.state.score});
+                }
+
                 for (let i = 0; i<pokemonsList.length; i++){
                     pokemonsList[i].clicked = false;
                 }
-               console.log(this.state)
+               console.log(this.state);
+
+
             } 
                 
 
