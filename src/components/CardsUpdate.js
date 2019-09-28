@@ -13,7 +13,8 @@ class CardsUpdate extends Component {
       score: 0,
       topScore: 0,
       color: "white",
-      shadow: "2px 2px 4px #000000"
+      shadow: "2px 2px 4px #000000",
+      shakeit: false
     };
 
 
@@ -52,7 +53,7 @@ class CardsUpdate extends Component {
                 
                 //game is over so and update the clicked properties to false
                 //and then if the points are the highest update 
-                this.setState({ score: 0, message: "Opps, wrong guess",color:"#5133a4"});
+                this.setState({ score: 0, message: "Opps, wrong guess",color:"#5133a4", shakeit:true});
                  //setting message style color back to white after 1/2 a second
                 setTimeout(() => {
                     this.setState({color:"red",});
@@ -80,7 +81,7 @@ class CardsUpdate extends Component {
                     for (let i = 0; i<pokemonsList.length; i++){
                     pokemonsList[i].clicked = false;
                     }
-                    this.setState({ score: 0, topScore:0, message: "You won, play again!", color:"#5133a4"});
+                    this.setState({ score: 0, topScore:0, message: "You won, play again!", color:"#5133a4", shakeit:false});
                    //setting message style color back to white after 1/2 a second
                     setTimeout(() => {
                         this.setState({color:"orange"});
@@ -95,7 +96,7 @@ class CardsUpdate extends Component {
                 console.log("1 point more"); 
  
                 //update the navbar to give 1 point, and message to be set...
-                this.setState({ score: this.state.score + 1, message: "Great, you scored!", color:"#5133a4" });
+                this.setState({ score: this.state.score + 1, message: "Great, you scored!", color:"#5133a4", shakeit:false });
                 
                  //setting message style color back to white after 1/2 a second
                 setTimeout(() => {
@@ -134,8 +135,9 @@ class CardsUpdate extends Component {
         shadow = {this.state.shadow}
         />
         <Jumbotron/> 
-        <Wrapper>
-            
+        <Wrapper
+        shakeState = {this.state.shakeit} >
+           
           {this.state.pokemonsList.map(pokemon => (
             <Cards
               cardStatus={this.cardStatus}
