@@ -1,27 +1,18 @@
-# Clicky Game
+# "Clicky Game"
+[Live Demo](https://ginnac.github.io/clicky-game/) 
 
-[Live DEMO](https://ginnac.github.io/clicky-game/) 
+React Project
 
-
-UTAH Coding Bootcamp React Project
-
----
-
-### Overview
-
+## Overview
 The Clicky Game uses React.js to offer a very dynamic website that update specific changes done in real time, which makes the updates occur faster giving a very interactive experience to the User. 
 This Application has been deployed in git-hub pages. 
 
-In this project I used JSX to build Funtional or Class components, and CSS to Style. I used the create react app tool as well to set the react structure.  
+In this project I used JSX to build Funtional or Class components, and CSS to Style. Used create react app tool as well to create and set the project structure.  
 
 
-Technologies:
-
+## Technologies:
 * [React.js](https://reactjs.org/)
 
-
-- - -
-### Developer
-
+## Developer
   * [Ginna Campbell](https://github.com/ginnac)
 
