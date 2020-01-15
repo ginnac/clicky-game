@@ -1,4 +1,4 @@
-# "Clicky Game"
+# Clicky Game
 [Live Demo](https://ginnac.github.io/clicky-game/) 
 
 React Project
